@@ -1,0 +1,176 @@
+<!-- Submenu Starts -->
+<nav class="submenu shipments" ng-controller="SubmenuCtrl as submenu">
+	<a href="#" ng-click="submenu.goBack();$event.preventDefault();" class="submenu__back-button">Back</a>
+	<ul class="submenu__menu-right">
+		<li><a href="#">Needs Review</a></li>
+		<li><a href="#">Delete Shipment</a></li>
+	</ul>
+</nav>
+<div class="clearfix"></div>
+<!-- Submenu Ends -->
+
+<section class="shipment" ng-controller="ShipmentCtrl">
+	<div class="container">
+		<h2>{{shipment.title}}</h2>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 mt20">
+				<form name="shipmentForm" action="">
+					<uib-tabset active="activeInfo">
+
+						<!-- Basic Info Starts -->
+						<uib-tab index="0" heading="Basic Info">
+							<div class="row">
+								<ul class="shipment__new-form">
+									<li class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label>Date</label>
+											<input name="date" type="text" class="form-control" ng-model="shipment.shipmentObject.basicInfo.date" required>
+											<label class="label-error" ng-show="shipmentForm.date.$dirty && shipmentForm.date.$invalid">Date required</label>
+
+										</div>
+									</li>
+									<li class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label>Status</label>
+											<input name="status" type="text" class="form-control" ng-model="shipment.shipmentObject.basicInfo.status" required>
+											<label class="label-error" ng-show="shipmentForm.status.$dirty && shipmentForm.status.$invalid">Status required</label>
+										</div>
+									</li>
+									<li class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label>Arrival Country</label>
+											<input name="arrival" type="text" class="form-control" ng-model="shipment.shipmentObject.basicInfo.country" required>
+											<label class="label-error" ng-show="shipmentForm.arrival.$dirty && shipmentForm.arrival.$invalid">Arrival required</label>
+										</div>
+									</li>
+									<li class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label>Truck Number</label>
+											<input name="truck" type="text" class="form-control" ng-model="shipment.shipmentObject.basicInfo.truck" required>
+											<label class="label-error" ng-show="shipmentForm.truck.$dirty && shipmentForm.truck.$invalid">Truck required</label>
+										</div>
+									</li>
+									<li class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label>Port</label>
+											<input name="port" type="text" class="form-control" ng-model="shipment.shipmentObject.basicInfo.port" required>
+											<label class="label-error" ng-show="shipmentForm.port.$dirty && shipmentForm.port.$invalid">Port required</label>
+										</div>
+									</li>
+									<li class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label>Invoice Number</label>
+											<input name="invoice" type="text" class="form-control" ng-model="shipment.shipmentObject.basicInfo.invoice" required>
+											<label class="label-error" ng-show="shipmentForm.invoice.$dirty && shipmentForm.invoice.$invalid">Invoice Number required</label>
+										</div>
+									</li>
+									<li class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label>Carrier SCAC</label>
+											<input name="carrier" type="text" class="form-control" ng-model="shipment.shipmentObject.basicInfo.scac" required>
+											<label class="label-error" ng-show="shipmentForm.carrier.$dirty && shipmentForm.carrier.$invalid">Carrier Scac required</label>
+										</div>
+									</li>
+									<li class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label>MX Broker</label>
+											<input name="broker" type="text" class="form-control" ng-model="shipment.shipmentObject.basicInfo.broker" required>
+											<label class="label-error" ng-show="shipmentForm.broker.$dirty && shipmentForm.broker.$invalid">Broker required</label>
+										</div>
+									</li>
+									<li class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label>Entry Number</label>
+											<input name="entrynumber" type="text" class="form-control" ng-model="shipment.shipmentObject.basicInfo.entry" required>
+											<label class="label-error" ng-show="shipmentForm.entrynumber.$dirty && shipmentForm.entrynumber.$invalid">Truck required</label>
+										</div>
+									</li>
+									<li class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label>Arrival Date</label>
+											<input name="arrivaldate" type="text" class="form-control" ng-model="shipment.shipmentObject.basicInfo.arrivalDate" required>
+											<label class="label-error" ng-show="shipmentForm.arrivaldate.$dirty && shipmentForm.arrivaldate.$invalid">Truck required</label>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</uib-tab>
+						<!-- Basic Info Ends -->
+
+						<!-- Carrier Info Starts -->
+						<uib-tab index="1" heading="Carrier Info">
+							<div class="row">
+								<ul class="shipment__new-form">
+									<li class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label>Truck</label>
+											<input type="text" class="form-control">
+										</div>
+									</li>
+									<li class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label>Driver</label>
+											<input type="text" class="form-control">
+										</div>
+									</li>
+									<li class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label>Trailer</label>
+											<input type="text" class="form-control">
+										</div>
+									</li>
+								</ul>
+							</div>
+						</uib-tab>
+						<!-- Carrier Info Ends -->
+
+					</uib-tabset>
+					<input type="submit" value="Save" ng-click="update(user)" class="btn btn-primary">
+				</form>
+			</div>
+			<div class="col-xs-12 col-sm-6 mt20">
+				<uib-tabset active="active">
+
+					<!-- Comments Start -->
+					<uib-tab index="0" heading="Comments">
+						<div class="row" ng-repeat="comment in shipment.shipmentObject.comments">
+							<div class="col-xs-2">
+								<img ng-src="{{ comment.imageURL }}" class="img-responsive">
+							</div>
+							<div class="col-xs-10">
+								<div class="shipmment__comments-author">
+									<span>{{ comment.author }}</span>
+									<span class="date">{{ comment.date }}</span>
+								</div>
+								<p class="shipmment__comments-text">{{ comment.text }}</p>
+							</div>
+						</div>
+						<button class="btn btn-primary" ng-click="shipment.openCommentModal()">Comment</button>
+					</uib-tab>
+					<!-- Comments End -->
+
+					<!-- Files Start -->
+					<uib-tab index="1" heading="Files">
+						<div class="row">
+							<ul class="shipment__files">
+								<li class="col-xs-12 col-md-6" ng-repeat="file in shipment.shipmentObject.files">
+									<a href="#"><img ng-src="{{ file.iconURL }}" width="60"></a>
+									<div class="filename"><a href="#">{{ file.filename }}</a></div>
+									<div class="date">{{ file.date }}</div>
+									<div class="uploader">{{ file.uploader }}</div>
+								</li>
+							</ul>
+						</div>
+						<button class="btn btn-primary" ng-click="shipment.openUploadModal()">Upload File</button>
+					</uib-tab>
+					<!-- Files End -->
+
+					<!-- Events Start -->
+					<uib-tab index="2" heading="Events">Events content</uib-tab>
+					<!-- Events End -->
+
+				</uib-tabset>
+			</div>
+		</div>
+	</div>
+</section>

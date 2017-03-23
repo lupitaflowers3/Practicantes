@@ -1,0 +1,286 @@
+////////// NAVIGATION //////////
+.menubar
+	position relative
+	display block
+	background-color black
+	padding 0
+	height 50px
+
+.menubar__logo
+	display inline-block
+	float left
+	width auto
+	height 50px
+	margin 0 0 0 0
+	padding 13px 15px
+	color white
+
+.menubar__menu
+	display block
+	width 100%
+	height 50px
+	margin 0
+	padding 0
+	list-style none
+	z-index 9999
+
+	li
+		display inline-block
+		float left
+		padding 0
+		margin 0
+		height 50px
+
+		@media (min-width screen-sm-min)
+			&:hover
+				background-color gray
+
+		a
+			display inline-block
+			height 50px
+			color white !important
+			margin 0
+			padding 0 15px
+			line-height 50px
+			overflow hidden
+			text-decoration none
+			font-size 15px
+			font-weight 600
+
+			img
+				margin-right 10px
+
+		&.active a
+			cursor default
+
+	@media (max-width screen-sm-max)
+		display block
+		position absolute
+		top 50px
+		left 0
+		right 0
+		height 0
+		overflow hidden
+		background-color gray
+		transition-duration 0.25s
+
+		li
+			display block
+			float none
+
+			a
+				display block
+
+		&.active
+			height 50px * 6
+
+
+.menubar__shipments
+	&.active
+		background-color blueColor
+
+		&:hover
+			background-color blueColor
+
+.menubar__companies
+	&.active
+		background-color maroonColor
+
+		&:hover
+			background-color maroonColor
+
+.menubar__users
+	&.active
+		background-color purpleColor
+
+		&:hover
+			background-color purpleColor
+
+.menubar__reports
+	&.active
+		background-color darkBlueColor
+
+		&:hover
+			background-color darkBlueColor
+
+.menubar__metrics
+	&.active
+		background-color pinkColor
+
+		&:hover
+			background-color pinkColor
+
+.menubar__account
+	@media (min-width screen-md-min)
+		float right !important
+	&.active
+		background-color greenColor
+
+		&:hover
+			background-color greenColor
+
+.menubar__menu-button
+	position absolute
+	display flex
+	top 13px
+	right 15px
+	width 24px
+	height 24px
+	overflow hidden
+
+	img
+		margin auto
+
+	@media (min-width screen-md-min)
+		display none
+
+
+////////// SUBMENU //////////
+.submenu
+	position relative
+	width auto
+	height 44px
+	background-color lightgrey
+
+	&.shipments
+		background-color blueColor
+
+	&.companies
+		background-color maroonColor
+	
+	&.users
+		background-color purpleColor
+
+	&.reports
+		background-color darkBlueColor
+
+	&.metrics
+		background-color pinkColor
+
+	&.account
+		background-color greenColor
+
+.submenu__menu
+	display inline-block
+	list-style none
+	margin-top 12px
+
+	li
+		display inline-block
+		color white
+		font-size 12px
+		line-height 12px
+		margin-right 15px
+
+		a
+			color white
+			font-weight 600
+
+		label
+			font-weight 600
+			// margin-right 10px
+
+.submenu__menu-right
+	@extend .submenu__menu
+	float right
+	margin-right 15px
+
+	li
+		margin-right 0
+		margin-left 20px
+		text-align right
+
+.submenu__search-container
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	width 44px
+	transition-property width
+	transition-duration 0.25s
+	transition-timing-function ease-in-out
+
+	&.active
+		width 100%
+
+		.submenu__search-form
+			input[type="search"]
+				padding-left 15px
+				padding-right 59px
+
+.submenu__search-form
+	width 100%
+	height 44px
+	position relative
+
+	input[type="search"]
+		display block
+		position absolute
+		width 100%
+		height 44px
+		top 0
+		left 0
+		border none
+		background-color rgba(255, 255, 255, 0.2);
+		padding-left 0
+		padding-right 0
+		outline none
+		color white
+		font-size 15px
+		appearance none
+
+		&::-webkit-input-placeholder /* Chrome/Opera/Safari */
+			color white
+
+		&::-moz-placeholder /* Firefox 19+ */
+			color white
+
+		&:-ms-input-placeholder /* IE 10+ */
+			color white
+
+		&:-moz-placeholder /* Firefox 18- */
+			color white
+
+	input[type="submit"]
+		visibility hidden
+		width 100%
+
+.submenu__toggle-search
+	display block
+	position absolute
+	top 0
+	right 0
+	width 44px
+	height 44px
+	background-color #666
+	background-image url(/assets/icons/close-icon.svg) // preload
+	background-image url(/assets/icons/search-icon.svg)
+	background-repeat no-repeat
+	background-position center center
+	transition background-color 0.25s
+	cursor pointer
+	transition-duration 0.25s
+
+	&.dismiss
+		background-color redColor
+		background-image url(/assets/icons/close-icon.svg)
+
+.submenu__back-button
+	display inline-block
+	position absolute
+	top 0
+	left 0
+	width 50px
+	height 44px
+	background-image url(/assets/icons/back-button.svg)
+	background-repeat no-repeat
+	background-position center center
+	overflow hidden
+	outline none
+	text-indent -9999px
+	cursor pointer
+
+.auto-height
+	min-height 44px
+	height auto
+	overflow hidden
