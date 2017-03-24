@@ -1,0 +1,60 @@
+blueColor = #338ced
+maroonColor = #d0482e
+purpleColor = #5138a8
+darkBlueColor = #114daf
+pinkColor = #d61173
+greenColor = #62a727
+redColor = #b41f47
+yellowColor = #eDa534
+backgroundColor = #f4f4f4
+screen-xs-min = 480px
+screen-sm-min = 768px
+screen-md-min = 992px
+screen-lg-min = 1200px
+screen-xs-max = (screen-sm-min - 1)
+screen-sm-max = (screen-md-min - 1)
+screen-md-max = (screen-lg-min - 1)
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700';
+*
+    font-family "Open Sans", "helvetica neue", helvetica, arial, sans-serif !important
+    -webkit-font-smoothing antialiased
+body
+    background-color backgroundColor
+section
+    h2
+        font-weight 300
+        font-size 48px
+        line-height 48px
+        margin-top 40px
+    h3
+        font-weight 300
+        font-size 34px
+        line-height 34px
+        margin-top 20px
+.mt20
+    margin-top 20px
+.filters-list
+    margin 0
+    padding 0
+    list-style none
+
+input.ng-pristine 
+    background-color lightblue
+
+input.ng-dirty 
+    background-color pink
+
+input.ng-valid
+    background-color green
+
+.label-error
+    color red
+
+@require "menu"
+@require "shipments"
+@require "companies"
+@require "users"
+@require "reports"
+@require "metrics"
+@require "account"
+@require "login"
