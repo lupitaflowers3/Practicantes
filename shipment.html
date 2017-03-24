@@ -3,13 +3,13 @@
 	<a href="#" ng-click="submenu.goBack();$event.preventDefault();" class="submenu__back-button">Back</a>
 	<ul class="submenu__menu-right">
 		<li><a href="#">Needs Review</a></li>
-		<li><a href="#">Delete Shipment</a></li>
+		<li><a href="" ng-click="submenu.delete()">Delete Shipment</a></li>
 	</ul>
 </nav>
 <div class="clearfix"></div>
 <!-- Submenu Ends -->
 
-<section class="shipment" ng-controller="ShipmentCtrl">
+<section class="shipment" ng-controller="ShipmentCtrl as shipment">
 	<div class="container">
 		<h2>{{shipment.title}}</h2>
 		<div class="row">
@@ -34,6 +34,10 @@
 											<label>Status</label>
 											<input name="status" type="text" class="form-control" ng-model="shipment.shipmentObject.basicInfo.status" required>
 											<label class="label-error" ng-show="shipmentForm.status.$dirty && shipmentForm.status.$invalid">Status required</label>
+
+
+
+
 										</div>
 									</li>
 									<li class="col-xs-12 col-sm-6">
@@ -125,7 +129,7 @@
 						<!-- Carrier Info Ends -->
 
 					</uib-tabset>
-					<input type="submit" value="Save" ng-click="update(user)" class="btn btn-primary">
+					<input type="button" value="Save" ng-click="shipment.create()" class="btn btn-primary">
 				</form>
 			</div>
 			<div class="col-xs-12 col-sm-6 mt20">
