@@ -24,7 +24,23 @@
 									<li class="col-xs-12 col-sm-6">
 										<div class="form-group">
 											<label>Date</label>
-											<input name="date" type="text" class="form-control" ng-model="shipment.shipmentObject.basicInfo.date" required>
+											<div ng-controller="DatepickerPopupDemoCtrl">
+    
+
+    
+    <div class="row">
+      <div class="col-md-6">
+        <p class="input-group">
+          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+      </div>
+
+     
+    <!--<button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>-->
+</div>
 											<label class="label-error" ng-show="shipmentForm.date.$dirty && shipmentForm.date.$invalid">Date required</label>
 
 										</div>
