@@ -203,7 +203,7 @@ osvilApp.controller('ShipmentsCtrl', ['$scope', '$location', '$uibModal', functi
 osvilApp.controller('ShipmentCtrl', ['$scope', '$routeParams', '$uibModal', '$http', function ($scope, $routeParams, $uibModal, $http) {
     'use strict';
 
-    console.log("aqui");
+    
 	this.title = "New Shipment";
 
 	// Shipment Object
@@ -455,6 +455,51 @@ osvilApp.controller('DatepickerPopupDemoCtrl', function ($scope) {
 
     return '';
   }
+
+
+
+
+});
+//Controller de 
+
+
+osvilApp.controller('TypeaheadCtrl', function($scope, $http) {
+
+  var _selected;
+
+  $scope.selected = undefined;
+  $scope.states = ['Fullfilled','Processing','Certified','Crossed','Submitted'];
+  // Any function returning a promise object can be used to load values asynchronously
+  $scope.getLocation = function(val) {
+    return $http.get('//maps.googleapis.com/maps/api/geocode/json', {
+      params: {
+        address: val,
+        sensor: false
+      }
+    }).then(function(response){
+      return response.data.results.map(function(item){
+        return item.formatted_address;
+      });
+    });
+  };
+
+  $scope.ngModelOptionsSelected = function(value) {
+    if (arguments.length) {
+      _selected = value;
+    } else {
+      return _selected;
+    }
+  };
+
+  $scope.modelOptions = {
+    debounce: {
+      default: 500,
+      blur: 250
+    },
+    getterSetter: true
+  };
+
+  $scope.statesWithFlags = [{'name':'Fullfilled','flag':'5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'},{'name':'Processing','flag':'5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'},{'name':'Certified','flag':'5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'},{'name':'Crossed','flag':'5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'},{'name':'Submitted','flag':'5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'}];
 });
 
 
