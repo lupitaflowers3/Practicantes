@@ -319,7 +319,7 @@ osvilApp.controller('ShipmentCtrl', ['$scope', '$routeParams', '$uibModal', '$ht
 
 }]);
 
-// Create user
+
 
 
 
@@ -499,7 +499,7 @@ osvilApp.controller('TypeaheadCtrl', function($scope, $http) {
     getterSetter: true
   };
 
-  $scope.statesWithFlags = [{'name':'Fullfilled','flag':'5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'},{'name':'Processing','flag':'5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'},{'name':'Certified','flag':'5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'},{'name':'Crossed','flag':'5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'},{'name':'Submitted','flag':'5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'}];
+  $scope.statesWithFlags = [{'name':'Fullfilled'},{'name':'Processing'},{'name':'Certified'},{'name':'Crossed'},{'name':'Submitted'}];
 });
 
 

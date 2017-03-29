@@ -46,22 +46,10 @@
 									<li class="col-xs-12 col-sm-6">
 										<div class="form-group">
 											<label>Status</label>
-											<div class='container-fluid typeahead-demo' ng-controller="TypeaheadCtrl" >
-
-    
-
-    <h4>Custom templates for results</h4>
-    <pre>Model: {{customSelected | json}}</pre>
-    <input type="text" ng-model="customSelected" placeholder="Custom template" uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control" typeahead-show-hint="true" typeahead-min-length="0" >
-
-    
-</div>
-
-											<label class="label-error" ng-show="shipmentForm.status.$dirty && shipmentForm.status.$invalid">Status required</label>
-
-
-
-
+												<div class='container-fluid typeahead-demo' ng-controller="TypeaheadCtrl">
+													<input type="text" ng-model="customSelected" placeholder="Custom template" uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="uib/template/typeahead/typeahead-match.html" class="form-control" typeahead-show-hint="true" typeahead-min-length="0">
+												</div>
+												<label class="label-error" ng-show="shipmentForm.status.$dirty && shipmentForm.status.$invalid">Status required</label>
 										</div>
 									</li>
 									<li class="col-xs-12 col-sm-6">
