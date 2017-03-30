@@ -1,0 +1,175 @@
+<!-- Submenu Starts -->
+<nav class="submenu companies" ng-controller="SubmenuCtrl as submenu">
+<a href="#" ng-click="submenu.goBack();$event.preventDefault();" class="submenu__back-button">Back</a>
+<ul class="submenu__menu-right">
+<li><a href="#/users/invite">Invite</a></li>
+<li ng-show="company.isEditing"><a href="#/companies/{{ company.companyId }}/user/add">Add User</a></li>
+<li ng-show="company.isEditing"><a href="#">Delete Company</a></li>
+</ul>
+</nav>
+<div class="clearfix"></div>
+<!-- Submenu Ends -->
+<section class="company" ng-controller="CompanyCtrl">
+<div class="container">
+<h2>{{company.title}}</h2>
+<h3>Basic Info</h3>
+<div class="row">
+<form name="CompanyForm" action="">
+<div class="col-xs-12 col-sm-6 mt20">
+<!-- Basic Info Starts -->
+<div class="row">
+<ul class="company__new-form">
+<li class="col-xs-12">
+<div class="form-group">
+<label>Status</label>
+<input type="text" class="form-control" ng-model="company.companyObject.status" required >
+<label class="label-error" ng-show="CompanyForm.status.$dirty && CompanyForm.status.$invalid">Status required</label>
+</div>
+</li>
+<li class="col-xs-12">
+<div class="form-group">
+<label>Type</label>
+<input type="text" class="form-control" ng-model="company.companyObject.type" required>
+<label class="label-error" ng-show="CompanyForm.type.$dirty && CompanyForm.type.$invalid">type required</label>		
+</div>
+</li>
+<li class="col-xs-12">
+<div class="form-group">
+<label>Parent Company</label>
+<input type="text" class="form-control" ng-model="company.companyObject.parentCompany" required >
+<label class="label-error" ng-show="CompanyForm.parentCompany.$dirty && CompanyForm.parentCompany.$invalid">Parent Company required</label>
+</div>
+</li>
+<li class="col-xs-12">
+<div class="form-group">
+<label>Carrier SCAC</label>
+<input type="text" class="form-control" ng-model="company.companyObject.carrierScac" required>
+<label class="label-error" ng-show="CompanyForm.carrierScac.$dirty && CompanyForm.carrierScac.$invalid">Carrier SCAC required</label>
+		
+</div>
+</li>
+<li class="col-xs-12">
+<div class="form-group">
+<label>Broker</label>
+<input type="text" class="form-control" ng-model="company.companyObject.broker" required>
+<label class="label-error" ng-show="CompanyForm.broker.$dirty && CompanyForm.broker.$invalid">Broker required</label>
+	
+</div>
+</li>
+</ul>
+</div>
+<!-- Basic Info Ends -->
+</div>
+<div class="col-xs-12 col-sm-6 mt20">
+<!-- Basic Info Starts -->
+<div class="row">
+<ul class="company__new-form">
+<li class="col-xs-12">
+<div class="form-group">
+<label>Name</label>
+<input type="text" class="form-control" ng-model="company.companyObject.name" required>
+<label class="label-error" ng-show="CompanyForm.name.$dirty && CompanyForm.name.$invalid && CompanyForm.name" >Name required</label>
+</div>
+</li>
+<li class="col-xs-12">
+<div class="form-group">
+<label>Logo</label>
+<input type="file" class="form-control" ng-model="company.companyObject.logo" required>
+<label class="label-error" ng-show="CompanyForm.logo.$dirty && CompanyForm.logo.$invalid">Logo required</label>
+</div>
+</li>
+						<li class="col-xs-12">
+								<div class="form-group">
+									<label>Country</label>
+									<input type="text" class="form-control" ng-model="company.companyObject.country" required>
+									<label class="label-error" ng-show="CompanyForm.country.$dirty && CompanyForm.country.$invalid">Country required</label>
+									
+								</div>
+							</li>
+							<li class="col-xs-12">
+								<div class="form-group">
+									<label>State</label>
+									<input type="text" class="form-control" ng-model="company.companyObject.state" required>
+									<label class="label-error" ng-show="CompanyForm.state.$dirty && CompanyForm.state.$invalid">State required</label>
+
+
+									
+								</div>
+							</li>
+							<li class="col-xs-12">
+								<div class="form-group">
+									<label>City</label>
+									<input type="text" class="form-control" ng-model="company.companyObject.city" required >
+									<label class="label-error" ng-show="CompanyForm.city.$dirty && CompanyForm.city.$invalid">City required</label>
+									
+								</div>
+							</li>
+							<li class="col-xs-12">
+								<div class="form-group"> 
+									<label>address</label>
+									<input type="text" class="form-control" ng-model="company.companyObject.address" required>
+									<label class="label-error" ng-show="CompanyForm.address.$dirty && company.address.$invalid">address required</label>
+								</div>
+							</li>
+							<li class="col-xs-6">
+								<div class="form-group">
+									<label>Zip Code</label>
+									<input type="text" class="form-control" ng-model="company.companyObject.zipCode" required>
+									<label class="label-error" ng-show="CompanyForm.zipCode.$dirty && CompanyForm.zipCode.$invalid">Zip Code required</label>
+									
+								</div>
+							</li>
+							<li class="col-xs-6">
+								<div class="form-group">
+									<label>Phone</label>
+									<input type="phone" class="form-control" ng-model="company.companyObject.phone" required>
+									<label class="label-error" ng-show="CompanyForm.Phone.$dirty && CompanyForm.Phone.$invalid">Phone required</label>
+
+									
+								</div>
+							</li>
+							<li class="col-xs-12">
+								<div class="form-group">
+									<label>Extra Fieldname</label>
+									<input type="text" class="form-control" ng-model="company.companyObject.extra" required>
+									<label class="label-error" ng-show="CompanyForm.extra.$dirty && CompanyForm.extra.$invalid">Extra Fieldname required</label>
+									
+								</div>
+							</li>
+							<li class="col-xs-12">
+								<div class="form-group">
+									<label><input type="checkbox"> Carrier Required</label>
+									<label class="label-error" ng-show="CompanyForm.checkbox.$dirty && CompanyForm.checkbox.$invalid">Status required</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- Basic Info Ends -->
+
+					<input type="submit" value="Save" class="btn btn-primary">
+					<input type="button" value="Cancel" class="btn btn-default">
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
+<section class="users" ng-controller="CompanyCtrl">
+	<div class="container">
+		<h3>Users</h3>
+		<div class="row">
+			<ul class="users__list">
+				<li ng-repeat="user in company.usersList" class="col-xs-6 col-sm-3 col-md-2">
+					<div class="users__list-item" ng-click="company.viewUser(user.id)">
+						<div class="item-c-user-picture" 
+						style="background-image:url({{ user.picture }})"></div>
+						<div class="item-c-user-name">{{ user.name }}</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	
+
+</section>

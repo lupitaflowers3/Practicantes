@@ -1,0 +1,71 @@
+////////// COMPANIES //////////
+.companies
+	display block
+
+.companies__list
+	padding 0
+	margin 30px 0
+	list-style none
+
+	li
+		margin-bottom 30px
+		perspective 500px
+
+.companies__list-item
+	display block
+	position relative
+	// background-color lightgrey
+	width 100%
+	color white
+	cursor pointer
+	transition-duration 0.25s
+	outline 1px solid transparent
+
+	&:hover
+		transform translateY(-5px) rotateX(5deg)
+
+.item-company-logo
+	width 100%
+	height auto
+	padding-bottom 100%
+	background-repeat no-repeat
+	background-position center
+	background-size cover
+
+.item-company-name
+	display block
+	display -webkit-box
+	height 34px
+	color black
+	font-size 14px
+	line-height 34px
+	text-align center
+	-webkit-line-clamp 1
+	-webkit-box-orient vertical
+	-moz-box-orient vertical
+	-ms-box-orient vertical
+	overflow hidden
+	text-overflow ellipsis
+
+/* COMPANY */
+
+.company
+	padding-bottom 40px
+
+.company__table
+
+	width auto
+	max-width 100%
+
+	td
+		border none !important
+
+		&:first-child
+			font-weight 700
+
+.company__new-form
+	margin 0
+	padding 0
+	list-style none
+
+	
