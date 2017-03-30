@@ -1,0 +1,124 @@
+<!-- Submenu Starts -->
+<nav class="submenu users" ng-controller="SubmenuCtrl as submenu">
+	<a href="#" ng-click="submenu.goBack();$event.preventDefault();" class="submenu__back-button">Back</a>
+	<!-- <ul class="submenu__menu-right">
+		<li><a href="#">Delete User</a></li>
+	</ul> -->
+</nav>
+<div class="clearfix"></div>
+<!-- Submenu Ends -->
+
+<section class="user" ng-controller="UserCtrl">
+	<div class="container">
+		<h2>Invite</h2>
+		<h3>Basic Info</h3>
+		<div class="row">
+			<form name="userform" action="">
+				<div class="col-xs-12 col-sm-6 mt20">
+						<!-- Basic Info Starts -->
+						<div class="row">
+							<ul class="shipment__new-form">
+								<li class="col-xs-12">
+									
+
+
+									<div class="form-group">
+										<label>FirstName</label>
+										<input type="text" class="form-control" pattern="[A-Za-z]+" required="" type="text"  ng-model="invite.userObject.firstName">
+
+									<label class="label-error" ng-show="userform.FirstName.$dirty && userform.FirstName.$invalid">First Name required</label>
+
+									</div>
+								</li>
+
+								<li class="col-xs-12">
+
+									
+
+									<div class="form-group">
+										<label>LastName</label>
+										<input type="text" class="form-control" pattern="[A-Za-z]+" required="" type="text" ng-model="invite.userObject.lastName">
+										<label class="label-error" ng-show="userform.LastName.$dirty && userform.LastName.$invalid">Last Name required</label>
+									</div>
+								</li>
+								<li class="col-xs-12">
+									
+
+									<div class="form-group">
+										<label>E-Mail</label>
+										<input type="email" class="form-control" id="Email" required="" ng-model="invite.userObject.email">
+										<label class="label-error" ng-show="userform.E-Mail.$dirty && userform.E-Mail.$invalid">E-Mail required</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- Basic Info Ends -->
+				</div>
+				<div class="col-xs-12 col-sm-6 mt20">
+					<!-- Basic Info Starts -->
+					<div class="row">
+						<div class="col-xs-12">
+							<h3>Permissions</h3>
+						</div>
+
+						<ul class="company__new-form">
+							<li class="col-xs-12">
+								<div class="form-group">
+									<label><input type="checkbox"> Create Users</label>
+								</div>
+							</li>
+							<li class="col-xs-12">
+								<div class="form-group">
+									<label><input type="checkbox"> Create Shipments</label>
+								</div>
+							</li>
+							<li class="col-xs-12">
+								<div class="form-group">
+									<label><input type="checkbox"> Upload Documents</label>
+								</div>
+							</li>
+							<li class="col-xs-12">
+								<div class="form-group">
+									<label><input type="checkbox"> Download Documents</label>
+								</div>
+							</li>
+							<li class="col-xs-12">
+								<div class="form-group">
+									<label><input type="checkbox"> Add Comments</label>
+								</div>
+							</li>
+							<li class="col-xs-12">
+								<div class="form-group">
+									<label><input type="checkbox"> Change Status</label>
+								</div>
+
+							</li>
+						</ul>
+
+					</div>
+					<!-- Basic Info Ends -->
+
+					<input type="submit" value="Invite" ng-click="submenu.enviar()" ng-disabled="userform.$invalid" class="btn btn-primary">
+                    
+  
+
+
+
+					<input type="button" value="Cancel" onclick = "location='http://localhost:3312/?#/users'" onclick="confirmExit."  class="btn btn-default" >
+
+
+
+
+
+			
+
+
+				</div>
+
+
+
+
+			</form>
+		</div>
+	</div>
+</section>
